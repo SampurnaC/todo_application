@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'haml'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
+gem 'pry'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

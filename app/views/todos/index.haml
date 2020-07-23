@@ -1,5 +1,17 @@
-- @todos.each do |todo|
-  = todo.name
-  %br
-  = todo.completed
-  %br
+.container-fluid
+  .col-lg-12
+    .row
+      - @todos.each do |todo|
+        .col-lg-3{:style => todo.completed ? 'text-decoration: line-through;' : ''}
+          = todo.name
+        .col-lg-3
+          - if todo.completed == true
+            Completed
+          - else
+            Not Completed
+        .col-lg-3
+          = link_to "Edit", edit_todo_path(todo), class: "btn"
+        .col-lg-3
+          = link_to "Delete", todo_path(todo), method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn'  
+    = link_to "Add new todo", new_todo_path, class: "btn btn-success"
+
