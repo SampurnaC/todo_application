@@ -1,1 +1,11 @@
-I am a new page
+= form_with(model: @todo) do |form|
+  .row
+    .col-md-6.form-group
+      = form.label :name
+      = form.text_field :name, class: "form-control"
+    .col-md-6.form-group
+      = form.label :completed
+      %br
+      = form.check_box :completed
+  .form-group
+    = form.submit "Create Todo", class: "btn btn-primary"    
